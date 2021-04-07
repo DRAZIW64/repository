@@ -6,27 +6,25 @@ import java.util.ArrayList;
 
 public class Creator {
 	public void returnArray() {
-		System.out.println(Website.list);
+		//System.out.println(Website.list);
 	}
-	public static void writeToFile(Website web) throws IOException{
-		ArrayList<String> title = Website.topic;
-		FileWriter htmlwrite = new FileWriter("src/" + title + ".html");
+	public static void createHtmlName(String x) throws IOException{
+		String t = Website.fileTitle;
+		FileWriter htmlwrite = new FileWriter("src/" + t + ".html");
 		htmlwrite.close();
 	}
 
 	public static void writeContent(String scrapeSelection) throws IOException{
 		PrintWriter pw = null;
-		System.out.println("Content initiated");
-		ArrayList<String> title = Website.topic;
+		//System.out.println("Content initiated");
+		
+		String t= Website.fileTitle;
 		String x = scrapeSelection;
 		try {
-		File file = new File("src/" + title + ".html");
+		File file = new File("src/" + t + ".html");
 		FileWriter fw = new FileWriter(file, true);
 		pw = new PrintWriter(fw);
-		
 			pw.write(x);
-		
-		
 		}
 		catch(IOException e) {
 			e.printStackTrace();
